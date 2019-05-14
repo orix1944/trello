@@ -1,0 +1,2 @@
+class CompletecCard < ApplicationRecord
+end
