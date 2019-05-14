@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-config.assets.initialize_on_precompile = false
+
 
 module Trello
   class Application < Rails::Application
@@ -17,4 +17,7 @@ module Trello
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
+
+  config.assets.initialize_on_precompile = false
+
 end
