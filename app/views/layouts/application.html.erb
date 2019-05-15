@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Trello</title>
+    <title>Todomemos</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+    <%= stylesheet_link_tag    'application','https://fonts.googleapis.com/css?family=Roboto+Slab', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <% if user_signed_in? %>
+       <%= render partial: 'layouts/header' %>
+    <% end %>
+    <div class="search-result">
+    </div>
     <%= yield %>
+    <!-- <audio id="text-successsound" preload="auto">
+    <source src="assets/audios/dorakue.mp3" type="audio/mp3">
+    </audio> -->
+
   </body>
 </html>

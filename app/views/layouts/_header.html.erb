@@ -1,0 +1,26 @@
+<nav class="navbar">
+  <%= link_to '/',class: "navbar-bland" do %>
+    <%= image_tag 'trello-624x351.jpg',class: 'headerlogo' %>
+  <% end %>
+  <%= form_with url: search_top_index_path do |f| %>
+    <div class="form-wrapper">
+      <%= f.text_field :title,value: '',name: "keyword",class: "search_form" %>
+      <%= f.submit "search",class: "search-btn" %>
+    </div>
+  <% end %>
+  <div>
+    <ul class="navbar__list">
+      <li><i class="fas fa-user-secret"></i>
+        <ul class="navbar__items">
+          <li><%= link_to 'プロフィール',user_path(current_user)%>
+          </li>
+          <li>
+            <%= link_to 'めもづくり',new_list_path %>
+          </li>
+          <li><%= link_to 'ろぐあうと',destroy_user_session_path,method: :delete%>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
