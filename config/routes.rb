@@ -11,4 +11,12 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  resources :user,only: [:show]
+  resources :list, only: [:new,:create,:edit,:update,:destroy] do
+    resources :card,except: [:index] do
+      member do
+        delete 'complete'
+      end
+    end
+  end
 end
